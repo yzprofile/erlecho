@@ -1,0 +1,10 @@
+{application, echo,
+ [
+  {description, "tcp echo server"},
+  {vsn, "1.0.0"},
+  {modules, [echo_app, echo_sup, echo, echo_worker_sup, echo_gen]},
+  {registered, [echo_sup, echo_worker_sup]},
+  {applications, [kernel, stdlib]},
+  {mod, {echo_app, []}},
+  {env, [{port, 8080}, {gen_port, 8081}]}
+ ]}.
